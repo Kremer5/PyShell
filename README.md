@@ -7,7 +7,9 @@ After running the both scripts we will be able to execute commands on the client
 git clone https://github.com/Kremer5/PyShell.git
 
 cd Pyshell
+
 Run necessary scripts.
+
 Download Completed.
 
 
