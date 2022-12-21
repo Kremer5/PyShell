@@ -105,9 +105,7 @@ def reverse_shell(conn):
                 continue
             else:
                 stdout = conn.recv(BUF_SIZE).decode(FORMAT)
-                # stderr = conn.recv(BUF_SIZE).decode(FORMAT)
                 print(str(stdout))
-                # print(stderr)
                 continue
         except Exception as e:
             print(f"{Red}[!] Wrong Options, Error: {e} {Reset}")
