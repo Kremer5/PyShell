@@ -123,8 +123,8 @@ def reverse_shell(conn):
 
 
 def help5():
-    print("""HELP ME PLEASE:
-\tThis is Py$hell, a python based reverse shell.
+    print(\n"""HELP ME PLEASE:
+\tThis is Py$h\nell, a python based reverse shell.
 \tYou need to send to the target the client side of the script.
 \tIt will be in the directory by the name reverse-shell_client.py .
 \tIt is recommended to change the client side name for a none suspicious name.
