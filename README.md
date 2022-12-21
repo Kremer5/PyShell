@@ -16,7 +16,8 @@ After running the both scripts we will be able to execute commands on the client
 # Note
 make sure to select the same ip and port in client side with server's ip and port.
 
-# disclaimer
+
+# Disclaimer
 For educational purposes and personal use only
 
 
