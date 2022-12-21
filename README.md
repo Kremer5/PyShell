@@ -5,6 +5,7 @@ After running the both scripts we will be able to execute commands on the client
 
 # Installation:
 git clone https://github.com/Kremer5/PyShell.git
+
 cd Pyshell
 Run necessary scripts.
 Download Completed.
@@ -12,5 +13,8 @@ Download Completed.
 
 # Note
 make sure to select the same ip and port in client side with server's ip and port.
+
+# disclaimer
+For educational purposes and personal use only
 
 
