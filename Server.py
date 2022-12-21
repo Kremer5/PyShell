@@ -47,7 +47,7 @@ def main():
         while True:
             try:
                 user_input = int(input("Press 1 or Else To Exit:"))
-                conn.send(user_input.encode('utf-8'))
+                conn.send(user_input.encode(FORMAT))
                 output = conn.recv(BUF_SIZE).decode(FORMAT)
             except ValueError as e:
                 print(f"{Red}[!] The Problem Is: {e} {Reset}")
