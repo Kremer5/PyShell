@@ -18,6 +18,8 @@ make sure to select the same ip and port in client side with server's ip and por
 
 
 # Disclaimer
+Some features still in progress but it still works well. 
+
 For educational purposes and personal use only
 
 
